@@ -1,0 +1,96 @@
+[
+
+{
+  "bookId": 1,
+  "bookName": "Educated",
+  "author": "Tara Westover",
+  "image": "https://i.ibb.co/F04HzhP/Capture1.png",
+  "review": "An inspiring memoir of resilience and self-discovery.",
+  "totalPages": 352,
+  "rating": 4.7,
+  "category": "Biography",
+  "tags": ["Memoir", "Education"],
+  "publisher": "Random House",
+  "yearOfPublishing": 2018
+},
+
+
+
+{
+  "bookId": 2,
+  "bookName": "The Power of Habit",
+  "author": "Charles Duhigg",
+  "image": "https://i.ibb.co/FhjR02m/black-book.png",
+  "review": "An insightful exploration of the science behind habits and how they can be changed.",
+  "totalPages": 371,
+  "rating": 4.6,
+  "category": "Self-Help",
+  "tags": ["Psychology", "Productivity"],
+  "publisher": "Random House",
+  "yearOfPublishing": 2012
+},
+
+
+{
+  "bookId": 3,
+  "bookName": "Sapiens: A Brief History of Humankind",
+  "author": "Yuval Noah Harari",
+  "image": "https://i.ibb.co/h24ygyM/images-3.jpg",
+  "review": "A thought-provoking journey through the history of Homo sapiens.",
+  "totalPages": 443,
+  "rating": 4.9,
+  "category": "History",
+  "tags": ["Anthropology", "Evolution"],
+  "publisher": "Harper",
+  "yearOfPublishing": 2011
+},
+
+
+{
+  "bookId": 4,
+  "bookName": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "image": "https://i.ibb.co/yYTcNfh/png-transparent-here-s-to-forever-chasing-hearts-an-underground-novel-book-single-parent-court-soul.png",
+  "review": "A timeless romance novel with sharp social commentary and memorable characters.",
+  "totalPages": 279,
+  "rating": 4.5,
+  "category": "Classic",
+  "tags": ["Romance", "Satire"],
+  "publisher": "T. Egerton, Whitehall",
+  "yearOfPublishing": 1813
+}
+
+,
+
+
+{
+  "bookId": 5,
+  "bookName": "The Girl on the Train",
+  "author": "Paula Hawkins",
+  "image": "girl_on_train.jpg",
+  "review": "A gripping thriller with twists and turns that keep you on the edge of your seat.",
+  "totalPages": 336,
+  "rating": 4.2,
+  "category": "Mystery",
+  "tags": ["Suspense", "Domestic Thriller"],
+  "publisher": "Riverhead Books",
+  "yearOfPublishing": 2015
+},
+
+
+{
+  "bookId": 6,
+  "bookName": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "image": "mockingbird.jpg",
+  "review": "A powerful narrative addressing themes of racial injustice and moral growth.",
+  "totalPages": 281,
+  "rating": 4.6,
+  "category": "Classic",
+  "tags": ["Social Justice", "Coming of Age"],
+  "publisher": "J. B. Lippincott & Co.",
+  "yearOfPublishing": 1960
+}
+
+
+]
