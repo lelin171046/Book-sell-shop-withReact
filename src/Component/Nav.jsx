@@ -4,19 +4,22 @@ import { Link, NavLink } from 'react-router-dom';
 const nav = () => {
     // 
     return (
-        <div className="navbar flex fixed drop-shadow-lg right-3 bg-base-100">
+        <div className="navbar flex fixed z-50 drop-shadow-lg right-3 bg-base-100">
   <Link to='/' className="navbar-start text-orange-500 btn btn-ghost text-xl font-bold ">
    Book Buy
   </Link>
   <div className="navbar-center  lg:flex">
     <ul className="menu gap-3 font-semibold  menu-horizontal px-1">
-      <NavLink>
+      <NavLink to='/' className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>
         Home
       </NavLink>
-      <NavLink to='/booklist'>
+      <NavLink to='/booklist'  className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>
       Listed Book
       </NavLink>
-      <NavLink to='/readpage'>Pages to read</NavLink>
+      <NavLink to='/readpage'  className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>Pages to read</NavLink>
+      
+      <NavLink to='/about'  className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>About</NavLink>
+      <NavLink to='/contact'  className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>Contact us</NavLink>
     </ul>
   </div>
   <div className="navbar-end gap-5">
