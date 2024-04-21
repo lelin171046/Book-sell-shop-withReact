@@ -1,5 +1,6 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { saveBooks } from ".";
+import { readBook, saveBooks } from ".";
+import Readbooks from "./Component/Readbooks";
 
 
 const Book = () => {
@@ -13,7 +14,9 @@ const Book = () => {
     const detailBook = books.find(book => book.bookId === deatilIdInNumber);
    
     const { image, bookName, author, tags, rating, publisher, yearOfPublishing, review, totalPages } = detailBook;
-
+    const handleReadBook = book =>{
+        Readbooks(book)
+    }
     const handleBook = detailBook =>{
         saveBooks(detailBook)
         console.log(detailBook);
@@ -52,7 +55,7 @@ const Book = () => {
                     </div>
                 </div>
                 <div className="card-actions gap-6 ">
-                    <button className="btn font-semibold text-xl ">Read</button>
+                    <button onClick={() => handleReadBook(books)} className="btn font-semibold text-xl ">Read</button>
                     <button onClick={() => handleBook(detailBook)} className="btn font-semibold text-xl  bg-blue-300">Wishlist</button>
                 </div>
             </div>

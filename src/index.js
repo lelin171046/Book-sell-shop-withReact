@@ -21,3 +21,17 @@ return detailBooks
     localStorage.setItem('detailBooks', JSON.stringify(detailBooks))
     toast.success('Added wishlist')
  }
+
+
+//  readbook section 
+
+export const readBook = book =>{
+    let books = getBooks()
+    const isExist = books.find(bk => bk.bookId === book.bookId )
+    if(isExist) {
+        return toast.error('You already Readd it ')
+    }
+    books.push(book)
+    localStorage.setItem('books', JSON.stringify(books))
+    toast.success('Successfully add to read list')
+}
