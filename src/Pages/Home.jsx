@@ -9,10 +9,10 @@ const Home = () => {
       <div className="flex py-14 items-start gap-6 justify-center rounded-lg bg-slate-300 lg:flex-row-reverse ">
         <img src="https://i.ibb.co/F04HzhP/Capture1.png" className="max-w-sm rounded-lg shadow-2xl" />
         <div className=" items-center  py-20 justify-center  ">
-          <h1 className="text-3xl font-bold">Books to freshen up
+          <h1 className="text-4xl font-bold">Books to freshen up <br />
             your bookshelf!</h1>
 
-          <Link to='/booklist' className="btn bg-green-500">View The List</Link>
+          <Link to='/booklist' className="btn font-bold mt-8 bg-green-500">View The List</Link>
         </div>
       </div>
       <div className="container mx-auto ">
