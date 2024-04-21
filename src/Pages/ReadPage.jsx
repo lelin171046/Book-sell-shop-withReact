@@ -54,7 +54,7 @@ const ReadPage = () => {
         }
     ]
     return (
-        <div className="border-2 border-orange-400 w-full h-full">
+        <div className="">
             <h2>count{data.length}</h2>
 
 

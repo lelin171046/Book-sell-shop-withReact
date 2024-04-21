@@ -9,7 +9,7 @@ const nav = () => {
    Book Buy
   </Link>
   <div className="navbar-center  lg:flex">
-    <ul className="menu gap-3 font-semibold  menu-horizontal px-1">
+    <ul className="menu gap-5 text-xl font-semibold  menu-horizontal px-1">
       <NavLink to='/' className={({isActive})=> isActive ? 'text-green-500 border-2 p-1 rounded-lg border-green-500': 'font-bold'}>
         Home
       </NavLink>
