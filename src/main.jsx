@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ReactDOM from 'react-dom/client'
-
+import toast, { Toaster } from 'react-hot-toast';
 import './index.css'
 import {
   createBrowserRouter,
@@ -88,5 +88,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
     <RouterProvider router={router} />
+    <Toaster></Toaster>
   </React.StrictMode>,
 )

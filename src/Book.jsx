@@ -1,17 +1,23 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
+import { saveBooks } from ".";
 
 
 const Book = () => {
     const books = useLoaderData();
-    // console.log(books);
+   
     const { detailId } = useParams();
-    console.log(typeof (detailId));
+   
     const deatilIdInNumber = parseInt(detailId)
-    console.log(typeof (deatilIdInNumber));
+   
 
     const detailBook = books.find(book => book.bookId === deatilIdInNumber);
-    console.log(detailBook);
+   
     const { image, bookName, author, tags, rating, publisher, yearOfPublishing, review, totalPages } = detailBook;
+
+    const handleBook = detailBook =>{
+        saveBooks(detailBook)
+        console.log(detailBook);
+    }
     return (
         <div className="card p-8 lg:card-side bg-base-100 shadow-xl">
             <figure className="max-w-screen-sm bg-slate-300"><img src={image} alt="Album" /></figure>
@@ -47,7 +53,7 @@ const Book = () => {
                 </div>
                 <div className="card-actions gap-6 ">
                     <button className="btn font-semibold text-xl ">Read</button>
-                    <button className="btn font-semibold text-xl  bg-blue-300">Wishlist</button>
+                    <button onClick={() => handleBook(detailBook)} className="btn font-semibold text-xl  bg-blue-300">Wishlist</button>
                 </div>
             </div>
         </div>
