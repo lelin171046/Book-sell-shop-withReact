@@ -1,88 +1,98 @@
-import { useLoaderData } from "react-router-dom";
 
-import Data from "../Component/Data";
-import { Area, AreaChart, CartesianGrid, Legend, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 
 
-const ReadPage = () => {
-    // const data = useLoaderData();
-    // console.log(data);
 
+const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
+const getPath = (x, y, width, height) => {
+    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+    ${x + width / 2}, ${y}
+    C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
+    Z`;
+  };
+
+const TriangleBar = (props) => {
+    const { fill, x, y, width, height } = props;
+
+    return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
+};
+ const ReadPage = () => {
+  
     const data = [
         {
-            "name": "Page A",
-            "uv": 4000,
-            "pv": 2400,
-            "amt": 2400
+          name: 'Page A',
+          uv: 4000,
+          pv: 2400,
+          amt: 2400,
         },
         {
-            "name": "Page B",
-            "uv": 3000,
-            "pv": 1398,
-            "amt": 2210
+          name: 'Page B',
+          uv: 3000,
+          pv: 1398,
+          amt: 2210,
         },
         {
-            "name": "Page C",
-            "uv": 2000,
-            "pv": 9800,
-            "amt": 2290
+          name: 'Page C',
+          uv: 2000,
+          pv: 9800,
+          amt: 2290,
         },
         {
-            "name": "Page D",
-            "uv": 2780,
-            "pv": 3908,
-            "amt": 2000
+          name: 'Page D',
+          uv: 2780,
+          pv: 3908,
+          amt: 2000,
         },
         {
-            "name": "Page E",
-            "uv": 1890,
-            "pv": 4800,
-            "amt": 2181
+          name: 'Page E',
+          uv: 1890,
+          pv: 4800,
+          amt: 2181,
         },
         {
-            "name": "Page F",
-            "uv": 2390,
-            "pv": 3800,
-            "amt": 2500
+          name: 'Page F',
+          uv: 2390,
+          pv: 3800,
+          amt: 2500,
         },
         {
-            "name": "Page G",
-            "uv": 3490,
-            "pv": 4300,
-            "amt": 2100
-        }
-    ]
+          name: 'Page G',
+          uv: 3490,
+          pv: 4300,
+          amt: 2100,
+        },
+      ];
+
+      
+
     return (
-        <div className="">
-            <h2>count{data.length}</h2>
-
-
-            <ResponsiveContainer width={700} height="80%">
-                <AreaChart data={data}
-                    margin={{ top: 20, right: 30, left: 0, bottom: 0 }}>
-                    <XAxis dataKey="name" />
-                    <YAxis />
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <Tooltip />
-                    <ReferenceLine x="Page C" stroke="green" label="Min PAGE" />
-                    <ReferenceLine y={4000} label="Max" stroke="red" strokeDasharray="3 3" />
-                    <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-                </AreaChart>
-            </ResponsiveContainer>
-
-            {/* <LineChart width={730} height={250} data={data}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-            </LineChart> */}
-        </div>
+      <div className="w-full h-96">
+        <ResponsiveContainer width="100%" height="100%">
+        <BarChart
+      width={500}
+      height={300}
+      data={data}
+      margin={{
+        top: 20,
+        right: 30,
+        left: 20,
+        bottom: 5,
+      }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="name" />
+      <YAxis />
+      <Bar dataKey="uv" fill="#8884d8" shape={<TriangleBar />} label={{ position: 'top' }}>
+        {data.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+        ))}
+      </Bar>
+    </BarChart>
+      </ResponsiveContainer>
+      </div>
     );
-};
-
-export default ReadPage;
+  }
+ 
+  
+  export default ReadPage;

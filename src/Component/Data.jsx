@@ -40,6 +40,7 @@ const Data = ({book}) => {
             </div>
 
         </div>
+        
     </div>
     );
 };
