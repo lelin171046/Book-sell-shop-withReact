@@ -5,7 +5,7 @@ import WishlistCard from "./WishlistCard";
 const Wishlist = () => {
     const [detailBook, setDetailBook] = useState([])
     useEffect(()=>{
-        const storedBooks = getBooks()
+        const storedBooks = getBooks('detailBooks')
         setDetailBook(storedBooks)
     },[])
 

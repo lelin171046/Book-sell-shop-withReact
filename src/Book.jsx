@@ -15,9 +15,9 @@ const Book = () => {
    
     const { image, bookName, author, tags, rating, publisher, yearOfPublishing, review, totalPages } = detailBook;
     const handleReadBook = book =>{
-        Readbooks(book)
+        readBook(book)
     }
-    const handleBook = detailBook =>{
+    const handleWishlistBook = detailBook =>{
         saveBooks(detailBook)
         console.log(detailBook);
     }
@@ -55,8 +55,8 @@ const Book = () => {
                     </div>
                 </div>
                 <div className="card-actions gap-6 ">
-                    <button onClick={() => handleReadBook(books)} className="btn font-semibold text-xl ">Read</button>
-                    <button onClick={() => handleBook(detailBook)} className="btn font-semibold text-xl  bg-blue-300">Wishlist</button>
+                    <button onClick={() => handleReadBook(detailBook)} className="btn font-semibold text-xl ">Read</button>
+                    <button onClick={() => handleWishlistBook(detailBook)} className="btn font-semibold text-xl  bg-blue-300">Wishlist</button>
                 </div>
             </div>
         </div>

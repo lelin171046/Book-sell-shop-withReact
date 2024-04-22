@@ -7,7 +7,7 @@ const Readbooks = () => {
 
     const [books, setBooks] = useState([]);
     useEffect(() => {
-        const storedBooks = getBooks()
+        const storedBooks = getBooks('books')
         setBooks(storedBooks)
     },[]);
 
